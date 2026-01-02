@@ -1,10 +1,10 @@
 {
     "configurations": [
         {
-           "name": "Windows",
+           "name": "Linux",
             "compilerPath": "gcc",
             "cStandard": "c17",
-            "intelliSenseMode": "windows-gcc-x64",
+            "intelliSenseMode": "linux-gcc-x64",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include",
