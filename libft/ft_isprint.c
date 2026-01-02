@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prova.c                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 21:29:49 by marvin            #+#    #+#             */
-/*   Updated: 2026/01/02 21:29:49 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/16 12:00:17 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main ()
+int	ft_isprint(int c)
 {
-    va_list args;
-    va_start(args, fmt);
+	unsigned char	str;
 
-    while (*fmt)
-    {
-        if (*fmt == '%')
-            *fmt++;
-        if (*fmt == 'd')
-            int x;
-            x = va_args(args, int);
-            printf("%d", x);
-        if ()
-
-    }
+	str = (unsigned char)c;
+	if (str >= 32 && str <= 126)
+		return (1);
+	return (0);
 }
+/*
+int	main ()
+{
+	int c = 'a'; 
+
+	printf("mio:%d\n", ft_isprint(c));
+	printf("reale:%d\n", isprint(c));
+}*/

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prova.c                                            :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 21:29:49 by marvin            #+#    #+#             */
-/*   Updated: 2026/01/02 21:29:49 by marvin           ###   ########.fr       */
+/*   Created: 2025/12/10 10:26:46 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/11 10:02:48 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main ()
+void	ft_putchar_fd(char c, int fd)
 {
-    va_list args;
-    va_start(args, fmt);
-
-    while (*fmt)
-    {
-        if (*fmt == '%')
-            *fmt++;
-        if (*fmt == 'd')
-            int x;
-            x = va_args(args, int);
-            printf("%d", x);
-        if ()
-
-    }
+	write(fd, &c, 1);
 }
+
+/* int	main()
+{
+	char	c = 'a';
+	int		fd = 4;
+
+	ft_putchar_fd(c, fd);
+	printf("[%d]\n", fd);
+	printf("{%c}\n", c);
+}  */

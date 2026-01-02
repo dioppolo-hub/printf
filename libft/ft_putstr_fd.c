@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prova.c                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 21:29:49 by marvin            #+#    #+#             */
-/*   Updated: 2026/01/02 21:29:49 by marvin           ###   ########.fr       */
+/*   Created: 2025/12/10 10:40:40 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/11 10:02:40 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main ()
+void	ft_putstr_fd(char *s, int fd)
 {
-    va_list args;
-    va_start(args, fmt);
+	int	i;
 
-    while (*fmt)
-    {
-        if (*fmt == '%')
-            *fmt++;
-        if (*fmt == 'd')
-            int x;
-            x = va_args(args, int);
-            printf("%d", x);
-        if ()
-
-    }
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }
+
+/* int	main()
+{
+	char	s[] = "Caracas"; 
+	int		fd = 0;
+
+	ft_putstr_fd(s, fd);
+} */

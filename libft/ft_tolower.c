@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prova.c                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 21:29:49 by marvin            #+#    #+#             */
-/*   Updated: 2026/01/02 21:29:49 by marvin           ###   ########.fr       */
+/*   Created: 2025/11/25 11:45:32 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/15 16:52:15 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main ()
+int	ft_tolower(int c)
 {
-    va_list args;
-    va_start(args, fmt);
-
-    while (*fmt)
-    {
-        if (*fmt == '%')
-            *fmt++;
-        if (*fmt == 'd')
-            int x;
-            x = va_args(args, int);
-            printf("%d", x);
-        if ()
-
-    }
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }
+
+/* int	main(void)
+{
+	char	string = 'A';
+
+	printf("stringa:%c\n", string);
+	printf("return:%c\n", ft_tolower(string));
+} */

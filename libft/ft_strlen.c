@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prova.c                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 21:29:49 by marvin            #+#    #+#             */
-/*   Updated: 2026/01/02 21:29:49 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/16 15:40:54 by dioppolo          #+#    #+#             */
+/*   Updated: 2025/12/04 11:57:50 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main ()
+size_t	ft_strlen(const char	*str)
 {
-    va_list args;
-    va_start(args, fmt);
+	size_t	i;
 
-    while (*fmt)
-    {
-        if (*fmt == '%')
-            *fmt++;
-        if (*fmt == 'd')
-            int x;
-            x = va_args(args, int);
-            printf("%d", x);
-        if ()
-
-    }
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
+/*
+int	main (int argc, char **argv)
+{
+	if(argc == 2)
+		printf(ft_strlen(argv[1]));
+}*/
