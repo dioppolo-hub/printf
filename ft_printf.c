@@ -12,20 +12,29 @@
 
 #include "libft.h"
 
+char	f_char (char *fmt, char args)
+{
+	write (1, args, 1);
+	*fmt++;
+}
+
+int ft_printf (char *fmt)
+{
+	va_list args;
+    va_start(args, fmt);
+	while (*fmt)
+	{
+		if (*fmt == '%')
+			*fmt++;
+		if (*fmt == 'c')
+			f_char(fmt, va_args(args, char))
+		if (*fmt == NULL)
+			return (ft_countlen(fmt));
+	}
+}
+
 int main ()
 {
-    va_list args;
-    va_start(args, fmt);
-
-    while (*fmt)
-    {
-        if (*fmt == '%')
-            *fmt++;
-        if (*fmt == 'd')
-            int x;
-            x = va_args(args, int);
-            printf("%d", x);
-        if ()
-
-    }
+    printf("a");
+	ft_printf(fmt);
 }
