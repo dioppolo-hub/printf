@@ -29,6 +29,9 @@ typedef struct s_list
 	struct s_list	*next;
 }			t_list;
 
+void			ft_uputnbr_fd(unsigned int n, int fd);
+char			*ft_uitoa(unsigned int n);
+//
 int				ft_isalnum(int c);
 size_t			ft_strlen(const char *str);
 void			*ft_memset(void *s, int c, size_t n);

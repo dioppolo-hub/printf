@@ -50,6 +50,35 @@ int	print_int(va_list ap)
 	return (i);
 }
 
+int	print_uns(va_list ap)
+{
+	char 			*str;
+	int				i;
+	int				n;
+	unsigned long	b;
+
+	i = 0;
+	n = va_arg(ap, unsigned int);
+	if (n < 0)
+	{
+		b = (1ULL << 32) - 42;
+		ft_uputnbr_fd(b, 1);
+		str = ft_uitoa(b);
+		while (str[i])
+			i++;
+		free(str);
+	}
+	else
+	{
+		ft_putnbr_fd(n, 1);
+		str = ft_itoa(n);
+		while (str[i])
+			i++;
+		free(str);
+	}
+	return (i);
+}
+
 int ft_printf(const char *fmt, ...)
 {
 	va_list ap;
@@ -73,6 +102,21 @@ int ft_printf(const char *fmt, ...)
 				len = len + print_str(ap);
 				fmt++;
 			}
+			else if (*fmt == 'd' || *fmt == 'i')
+			{
+				len = len + print_int(ap);
+				fmt++;
+			}
+			else if (*fmt == 'u')
+			{
+				len = len + print_uns(ap);
+				fmt++;
+			}
+			else if (*fmt == 'x')
+			{
+				len = len + prints_hex(ap);
+				fmt++;
+			}
 		}
 		else
 		{
@@ -88,8 +132,10 @@ int ft_printf(const char *fmt, ...)
 int main ()
 {
 	int	printlen = 0;
-	printf("mio:%d\n", ft_printf("Hello %dorld!\n", 42));
-	printlen = printf("Hello %dorld!\n", 42);
-	printf("reale:%d\n", printlen);
+	printf("-------mio:---------\n");
+	printf("%d\n", ft_printf("Hello %uorld!\n", 0));
+	printf("-------reale:-------\n");
+	printlen = printf("Hello %uorld!\n", 0);
+	printf("%d\n", printlen);
 	return (0);
 }
