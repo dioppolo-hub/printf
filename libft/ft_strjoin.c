@@ -37,7 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t		lens1;
 	size_t		lens2;
 	size_t		tot;
-	size_t		i;
 	char		*newstr;
 
 	if (!s1 || !s2)
@@ -45,7 +44,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
 	tot = lens1 + lens2;
-	i = 0;
 	newstr = malloc((tot + 1) * sizeof(char));
 	if (!newstr)
 		return (NULL);

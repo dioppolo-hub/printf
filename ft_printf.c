@@ -11,29 +11,43 @@
 
 #include "libft.h"
 
-void print_char(va_list ap, const char *fmt, int len)
+int	print_char(va_list ap)
 {
 	int c;
 	c = va_arg(ap, int);
 	write(1, &c, 1);
-	len++;
-	fmt++;
+	return (1);
 }
 
-void	print_str(va_list ap, const char *fmt, int len)
+int	print_str(va_list ap)
 {
-	int	i;
-	int	c;
+	int		i;
+	char	*c;
 
 	i = 0;
-	while (fmt[i])
+	c = va_arg(ap, char *);
+	while (c[i])
 	{
-		c = va_arg(ap, int);
-		write(1, &c, 1);
+		write(1, &c[i], 1);
 		i++;
 	}
-	len++;
-	fmt++;
+	return (i);
+}
+
+int	print_int(va_list ap)
+{
+	char 	*str;
+	int		i;
+	int		n;
+
+	i = 0;
+	n = va_arg(ap, int);
+	ft_putnbr_fd(n, 1);
+	str = ft_itoa(n);
+	while (str[i])
+		i++;
+	free(str);
+	return (i);
 }
 
 int ft_printf(const char *fmt, ...)
@@ -50,13 +64,22 @@ int ft_printf(const char *fmt, ...)
 		{
 			fmt++;
 			if (*fmt == 'c')
-				print_char(ap, fmt, len);
+			{
+				len = len + print_char(ap);
+				fmt++;
+			}
 			else if (*fmt == 's')
-				print_str(ap, fmt, len);
+			{
+				len = len + print_str(ap);
+				fmt++;
+			}
 		}
+		else
+		{
 			write(1, fmt, 1);
 			len++;
 			fmt++;
+		}
 	}
 	va_end(ap);
 	return (len);
@@ -65,8 +88,8 @@ int ft_printf(const char *fmt, ...)
 int main ()
 {
 	int	printlen = 0;
-	printf("mio:%d\n", ft_printf("Hello %corld!\n", 'W'));
-	printlen = printf("Hello %corld!\n", 'W');
+	printf("mio:%d\n", ft_printf("Hello %dorld!\n", 42));
+	printlen = printf("Hello %dorld!\n", 42);
 	printf("reale:%d\n", printlen);
 	return (0);
 }

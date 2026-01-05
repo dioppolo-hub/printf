@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <limits.h>
 # include <unistd.h>
+# include <bsd/string.h>
 # include <stdio.h>
 # include <string.h>
 # include <strings.h>
