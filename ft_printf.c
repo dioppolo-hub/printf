@@ -79,6 +79,62 @@ int	print_uns(va_list ap)
 	return (i);
 }
 
+int	print_hex(va_list ap)
+{
+	unsigned int	n;
+	int				i;
+	int				res;
+	char			hex[] = "0123456789abcdef";
+	char			buf[32];
+
+	n = va_arg(ap, int);
+	res = 0;
+	i = 0;
+	if (n == 0)	
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	while (n > 0)
+	{
+		res = n % 16;
+		buf[i++] = hex[res];
+		n = n / 16;
+	}
+	res = i;
+	while (i-- >= 0)
+		write(1, &buf[i], 1);
+	return (res);
+}
+
+int	print_HEX(va_list ap)
+{
+	unsigned int	n;
+	int				i;
+	int				res;
+	char			hex[] = "0123456789ABCDEF";
+	char			buf[32];
+
+	n = va_arg(ap, int);
+	res = 0;
+	i = 0;
+	if (n == 0)	
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	while (n > 0)
+	{
+		res = n % 16;
+		buf[i++] = hex[res];
+		n = n / 16;
+	}
+	res = i;
+	while (i-- >= 0)
+		write(1, &buf[i], 1);
+	return (res);
+}
+
 int ft_printf(const char *fmt, ...)
 {
 	va_list ap;
@@ -114,7 +170,12 @@ int ft_printf(const char *fmt, ...)
 			}
 			else if (*fmt == 'x')
 			{
-				len = len + prints_hex(ap);
+				len = len + print_hex(ap);
+				fmt++;
+			}
+			else if (*fmt == 'X')
+			{
+				len = len + print_HEX(ap);
 				fmt++;
 			}
 		}
@@ -133,9 +194,9 @@ int main ()
 {
 	int	printlen = 0;
 	printf("-------mio:---------\n");
-	printf("%d\n", ft_printf("Hello %uorld!\n", 0));
+	printf("%d\n", ft_printf("Hello %xorld!\n", 42));
 	printf("-------reale:-------\n");
-	printlen = printf("Hello %uorld!\n", 0);
+	printlen = printf("Hello %xorld!\n", 42);
 	printf("%d\n", printlen);
 	return (0);
 }
