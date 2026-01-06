@@ -67,15 +67,13 @@ int	print_uns(va_list ap)
 		while (str[i])
 			i++;
 		free(str);
+		return (i);
 	}
-	else
-	{
-		ft_putnbr_fd(n, 1);
-		str = ft_itoa(n);
-		while (str[i])
-			i++;
-		free(str);
-	}
+	ft_putnbr_fd(n, 1);
+	str = ft_itoa(n);
+	while (str[i])
+		i++;
+	free(str);
 	return (i);
 }
 
@@ -135,6 +133,24 @@ int	print_HEX(va_list ap)
 	return (res);
 }
 
+int	print_pnt(va_list ap)
+{
+	void	*ptr;
+	char	*str;
+	int		i;
+
+	ptr = va_arg(ap, void *);
+	str = ft_itoa(ptr);
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	printf("[%p]", ptr);
+	return (i);
+}
+
 int ft_printf(const char *fmt, ...)
 {
 	va_list ap;
@@ -148,6 +164,12 @@ int ft_printf(const char *fmt, ...)
 		if (*fmt == '%')
 		{
 			fmt++;
+			if (*fmt == '%')
+			{
+				write(1, "%", 1);
+				fmt++;
+				len++;
+			}
 			if (*fmt == 'c')
 			{
 				len = len + print_char(ap);
@@ -178,6 +200,11 @@ int ft_printf(const char *fmt, ...)
 				len = len + print_HEX(ap);
 				fmt++;
 			}
+			else if (*fmt == 'p')
+			{
+				len = len + print_pnt(ap);
+				fmt++;
+			}
 		}
 		else
 		{
@@ -193,10 +220,12 @@ int ft_printf(const char *fmt, ...)
 int main ()
 {
 	int	printlen = 0;
+	void *abc;
+
 	printf("-------mio:---------\n");
-	printf("%d\n", ft_printf("Hello %xorld!\n", 42));
-	printf("-------reale:-------\n");
-	printlen = printf("Hello %xorld!\n", 42);
-	printf("%d\n", printlen);
+	printf("%d\n", ft_printf("Hello %porld!\n", abc));
+	//printf("-------reale:-------\n");
+	//printlen = printf("Hello %porld!\n", abc);
+	//printf("%d\n", printlen);
 	return (0);
 }
