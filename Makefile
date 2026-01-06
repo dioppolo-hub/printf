@@ -10,7 +10,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 AR = ar rcs
 
-SRC = ft_printf.c
+SRC = ft_printf.c ft_charprint.c ft_hexprint.c ft_nbrprint.c ft_putunbr.c ft_uitoa.c 
 
 OBJ = $(SRC:.c=.o)
 

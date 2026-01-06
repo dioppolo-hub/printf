@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stdarg.h>
+# include <stdint.h>
 # include <limits.h>
 # include <unistd.h>
 # include <bsd/string.h>
@@ -31,6 +32,14 @@ typedef struct s_list
 
 void			ft_uputnbr_fd(unsigned int n, int fd);
 char			*ft_uitoa(unsigned int n);
+int				print_int(va_list ap);
+int				print_uns(va_list ap);
+int				print_hexptr(uintptr_t n);
+int				print_HEX(va_list ap);
+int				print_hex(va_list ap);
+int				print_str(va_list ap);
+int				print_str(va_list ap);
+int				print_ptr(va_list ap);
 //
 int				ft_isalnum(int c);
 size_t			ft_strlen(const char *str);
