@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 00:00:00 by auto              #+#    #+#             */
-/*   Updated: 2026/01/07 09:45:55 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/07 10:01:40 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	print_hex(va_list ap)
 	int				i;
 	int				res;
 	char			buf[32];
-	char			hex[32];
+	char			*hex;
 
-	hex[32] = "0123456789abcdef";
+	hex = "0123456789abcdef";
 	n = va_arg(ap, int);
 	res = 0;
 	i = 0;
@@ -47,9 +47,9 @@ int	print_uphex(va_list ap)
 	int				i;
 	int				res;
 	char			buf[32];
-	char			hex[32];
+	char			*hex;
 
-	hex[32] = "0123456789abcdef";
+	hex = "0123456789abcdef";
 	n = va_arg(ap, int);
 	res = 0;
 	i = 0;
@@ -75,9 +75,9 @@ int	print_hexptr(uintptr_t n)
 	int		i;
 	int		res;
 	char	buf[32];
-	char	base[32];
+	char	*base;
 
-	base[32] = "0123456789abcdef";
+	base = "0123456789abcdef";
 	i = 0;
 	res = 0;
 	while (n > 0)
