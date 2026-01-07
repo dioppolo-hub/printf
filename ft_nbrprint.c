@@ -39,7 +39,7 @@ int	print_uns(va_list ap)
 	if (n < 0)
 	{
 		b = (1ULL << 32) - 42;
-		ft_uputnbr_fd(b, 1);
+		ft_putunbr_fd(b, 1);
 		str = ft_uitoa(b);
 		while (str[i])
 			i++;

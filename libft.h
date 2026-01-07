@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:14:36 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/12/16 10:02:23 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/07 09:36:56 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_list
 	struct s_list	*next;
 }			t_list;
 
-void			ft_uputnbr_fd(unsigned int n, int fd);
+void			ft_putunbr_fd(unsigned int n, int fd);
 char			*ft_uitoa(unsigned int n);
 int				print_int(va_list ap);
 int				print_uns(va_list ap);
@@ -38,7 +38,7 @@ int				print_hexptr(uintptr_t n);
 int				print_HEX(va_list ap);
 int				print_hex(va_list ap);
 int				print_str(va_list ap);
-int				print_str(va_list ap);
+int				print_char(va_list ap);
 int				print_ptr(va_list ap);
 //
 int				ft_isalnum(int c);

@@ -92,7 +92,6 @@ int	print_ptr(va_list ap)
 {
 	void			*ptr;
 	uintptr_t		temp;
-	char			*str;
 	int				i;
 
 	ptr = va_arg(ap, void *);

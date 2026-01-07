@@ -80,7 +80,7 @@ int ft_printf(const char *fmt, ...)
 int main ()
 {
 	int	printlen = 0;
-	void *abc;
+	void *abc = "abc";
 
 	printf("-------mio:---------\n");
 	printf("%d\n", ft_printf("Hello %porld!\n", abc));
