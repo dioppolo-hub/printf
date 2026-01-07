@@ -1,11 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_hexprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: auto <auto@local>                           +#+  +:+       +#+        */
+/*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 00:00:00 by auto              #+#    #+#             */
+/*   Updated: 2026/01/07 09:45:55 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +17,14 @@ int	print_hex(va_list ap)
 	unsigned int	n;
 	int				i;
 	int				res;
-	char			hex[] = "0123456789abcdef";
 	char			buf[32];
+	char			hex[32];
 
+	hex[32] = "0123456789abcdef";
 	n = va_arg(ap, int);
 	res = 0;
 	i = 0;
-	if (n == 0)	
+	if (n == 0)
 	{
 		write(1, "0", 1);
 		return (1);
@@ -39,18 +41,19 @@ int	print_hex(va_list ap)
 	return (res);
 }
 
-int	print_HEX(va_list ap)
+int	print_uphex(va_list ap)
 {
 	unsigned int	n;
 	int				i;
 	int				res;
-	char			hex[] = "0123456789ABCDEF";
 	char			buf[32];
+	char			hex[32];
 
+	hex[32] = "0123456789abcdef";
 	n = va_arg(ap, int);
 	res = 0;
 	i = 0;
-	if (n == 0)	
+	if (n == 0)
 	{
 		write(1, "0", 1);
 		return (1);
@@ -69,11 +72,12 @@ int	print_HEX(va_list ap)
 
 int	print_hexptr(uintptr_t n)
 {
-	char	base[] = "0123456789abcdef";
 	int		i;
 	int		res;
 	char	buf[32];
+	char	base[32];
 
+	base[32] = "0123456789abcdef";
 	i = 0;
 	res = 0;
 	while (n > 0)

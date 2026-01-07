@@ -1,11 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_nbrprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: auto <auto@local>                           +#+  +:+       +#+        */
+/*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 00:00:00 by auto              #+#    #+#             */
+/*   Updated: 2026/01/07 09:47:41 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -13,7 +14,7 @@
 
 int	print_int(va_list ap)
 {
-	char 	*str;
+	char	*str;
 	int		i;
 	int		n;
 
@@ -29,7 +30,7 @@ int	print_int(va_list ap)
 
 int	print_uns(va_list ap)
 {
-	char 			*str;
+	char			*str;
 	int				i;
 	int				n;
 	unsigned long	b;

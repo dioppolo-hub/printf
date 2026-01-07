@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 10:54:10 by dioppolo          #+#    #+#             */
-/*   Updated: 2026/01/07 09:35:29 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/07 09:39:37 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	ft_putunbr_fd(unsigned int n, int fd)
 		k = k * -1;
 		write(fd, "-", 1);
 	}
-    if (n >= 10)
-        ft_putunbr_fd(n / 10, fd);
-    c = '0' + (n % 10);
-    write(fd, &c, 1);
+	if (n >= 10)
+		ft_putunbr_fd(n / 10, fd);
+	c = '0' + (n % 10);
+	write(fd, &c, 1);
 }
 
 /* int	main()

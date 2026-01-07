@@ -57,7 +57,7 @@ int ft_printf(const char *fmt, ...)
 			}
 			else if (*fmt == 'X')
 			{
-				len = len + print_HEX(ap);
+				len = len + print_uphex(ap);
 				fmt++;
 			}
 			else if (*fmt == 'p')
