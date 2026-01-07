@@ -6,11 +6,11 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 10:54:10 by dioppolo          #+#    #+#             */
-/*   Updated: 2026/01/07 09:32:46 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/07 12:08:07 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static long int	countlen(long int k)
 {

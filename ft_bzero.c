@@ -6,11 +6,11 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:24:33 by dioppolo          #+#    #+#             */
-/*   Updated: 2025/11/28 12:05:57 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/07 10:38:38 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_bzero(void *s, size_t n)
 {

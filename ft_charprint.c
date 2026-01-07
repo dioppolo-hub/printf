@@ -6,11 +6,11 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 00:00:00 by auto              #+#    #+#             */
-/*   Updated: 2026/01/07 09:48:44 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/07 12:13:58 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	print_char(va_list ap)
 {
@@ -28,6 +28,11 @@ int	print_str(va_list ap)
 
 	i = 0;
 	c = va_arg(ap, char *);
+	if (c == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (c[i])
 	{
 		write(1, &c[i], 1);

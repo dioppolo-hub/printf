@@ -6,11 +6,11 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 00:00:00 by auto              #+#    #+#             */
-/*   Updated: 2026/01/07 10:17:09 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/07 12:06:51 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_cases(va_list ap, const char *fmt, int len)
 {
@@ -76,9 +76,9 @@ int	ft_printf(const char *fmt, ...)
 	//int testHex = 4242;
 
 	printf("-------mio:---------\n");
-	printf("%d\n", ft_printf("Hello %%orld!\n"));
+	printf("%d\n", ft_printf("%u", -1));
 	printf("-------reale:-------\n");
-	printlen = printf("Hello %%orld!\n");
+	printlen = printf("%u", -1);
 	printf("%d\n", printlen);
 	return (0);
 } */

@@ -6,11 +6,11 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 00:00:00 by auto              #+#    #+#             */
-/*   Updated: 2026/01/07 10:01:40 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/07 12:13:48 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	print_hex(va_list ap)
 {
@@ -36,7 +36,7 @@ int	print_hex(va_list ap)
 		n = n / 16;
 	}
 	res = i;
-	while (i-- >= 0)
+	while (i-- >= 1)
 		write(1, &buf[i], 1);
 	return (res);
 }
@@ -49,7 +49,7 @@ int	print_uphex(va_list ap)
 	char			buf[32];
 	char			*hex;
 
-	hex = "0123456789abcdef";
+	hex = "0123456789ABCDEF";
 	n = va_arg(ap, int);
 	res = 0;
 	i = 0;
@@ -65,42 +65,45 @@ int	print_uphex(va_list ap)
 		n = n / 16;
 	}
 	res = i;
-	while (i-- >= 0)
+	while (i-- >= 1)
 		write(1, &buf[i], 1);
 	return (res);
 }
 
-int	print_hexptr(uintptr_t n)
+int	print_hexptr(unsigned long long ptr)
 {
-	int		i;
-	int		res;
-	char	buf[32];
-	char	*base;
+	int					i;
+	unsigned long long	res;
+	char				buf[32];
+	char				*base;
 
 	base = "0123456789abcdef";
 	i = 0;
 	res = 0;
-	while (n > 0)
+	while (ptr > 0)
 	{
-		res = n % 16;
+		res = ptr % 16;
 		buf[i++] = base[res];
-		n = n / 16;
+		ptr = ptr / 16;
 	}
 	res = i;
-	while (i-- >= 0)
+	while (i-- >= 1)
 		write(1, &buf[i], 1);
 	return (res);
 }
 
 int	print_ptr(va_list ap)
 {
-	void			*ptr;
-	uintptr_t		temp;
-	int				i;
+	unsigned long long	ptr;
+	int					i;
 
-	ptr = va_arg(ap, void *);
-	temp = (uintptr_t)ptr;
+	ptr = va_arg(ap, unsigned long long);
+	if (ptr == 0)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	write(1, "0x", 2);
-	i = print_hexptr(temp);
+	i = print_hexptr(ptr);
 	return (i + 2);
 }
