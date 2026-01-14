@@ -6,7 +6,7 @@
 /*   By: dioppolo <dioppolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 00:00:00 by auto              #+#    #+#             */
-/*   Updated: 2026/01/07 12:06:51 by dioppolo         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:11:31 by dioppolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_printf(const char *fmt, ...)
 
 	len = 0;
 	if (!fmt)
-		return (0);
+		return (-1);
 	va_start(ap, fmt);
 	while (*fmt)
 	{
